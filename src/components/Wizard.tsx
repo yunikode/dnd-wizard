@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import {BasicInfo} from './BasicInfo'
+import {ScoreCalculator} from './ScoreCalculator'
 
 interface State {
   character: Partial<Character>;
@@ -39,9 +40,11 @@ export class Wizard extends React.Component<{}, State> {
   }
 
   render () {
+    const {character} = this.state
     console.log(this.state.character)
     return <>
       <BasicInfo onComplete={this.handleBasic}/>
+      <ScoreCalculator stats={character.stats}/>
      </>
   }
 }
